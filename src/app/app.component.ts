@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 import { Product } from './model/product';
 import { ProductCardListComponent } from './product-card-list/product-card-list.component';
 
@@ -8,7 +9,7 @@ import { ProductCardListComponent } from './product-card-list/product-card-list.
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [RouterOutlet, ProductCardListComponent],
+  imports: [RouterOutlet, ProductCardListComponent, HeaderComponent],
 })
 export class AppComponent {
   products = [
