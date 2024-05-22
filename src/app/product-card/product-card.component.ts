@@ -10,7 +10,7 @@ import { Component, HostBinding, Input, numberAttribute } from '@angular/core';
 })
 export class ProductCardComponent {
   @Input() productName!: string;
-  @Input() authors!: string;
+  @Input() authors!: string[];
   @Input() company!: string;
   @Input() imgUrl!: string;
 

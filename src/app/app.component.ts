@@ -14,28 +14,28 @@ export class AppComponent {
   products = [
     new Product({
       name: 'A產品',
-      authors: '作者A、作者B、作者C',
+      authors: ['作者A', '作者B', '作者C'],
       company: '博碩文化',
       imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
       price: 1580,
     }),
     new Product({
       name: 'B產品',
-      authors: '作者A、作者B、作者C',
+      authors: ['作者A', '作者B', '作者C'],
       company: '博碩文化',
       imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
       price: 1580,
     }),
     new Product({
       name: 'C產品',
-      authors: '作者A、作者B、作者C',
+      authors: ['作者A', '作者B', '作者C'],
       company: '博碩文化',
       imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
       price: 1580,
     }),
     new Product({
       name: 'D產品',
-      authors: '作者A、作者B、作者C',
+      authors: ['作者A', '作者B', '作者C'],
       company: '博碩文化',
       imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
       price: 1580,
