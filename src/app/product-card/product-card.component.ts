@@ -1,5 +1,12 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, HostBinding, Input, numberAttribute } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  Output,
+  numberAttribute,
+} from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
@@ -18,4 +25,6 @@ export class ProductCardComponent {
 
   @HostBinding('class')
   class = 'product-card';
+
+  @Output() view = new EventEmitter<void>();
 }

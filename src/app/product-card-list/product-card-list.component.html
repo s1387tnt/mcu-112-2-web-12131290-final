@@ -6,6 +6,7 @@
     [company]="product.company"
     [imgUrl]="product.imgUrl"
     [price]="product.price"
+    (view)="view.emit(product)"
   ></app-product-card>
   }
 </div>
