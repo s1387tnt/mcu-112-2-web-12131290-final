@@ -2,3 +2,31 @@
   display: block;
   padding: 10px;
 }
+
+div {
+  display: inline-block;
+}
+
+.toolbar {
+  margin-bottom: 20px;
+  margin: 10px;
+}
+
+button {
+  border: solid 1px #007bff;
+  padding: 10px 10px;
+  cursor: pointer;
+  color: #007bff;
+  background-color: white;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.Inquire {
+  margin-bottom: 20px;
+  border: solid 1px;
+  padding: 10px 100px;
+  color: gray;
+  border-radius: 2px;
+}
