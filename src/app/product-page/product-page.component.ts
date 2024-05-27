@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/product';
 import { ProductCardListComponent } from '../product-card-list/product-card-list.component';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-page',
@@ -10,39 +11,17 @@ import { ProductCardListComponent } from '../product-card-list/product-card-list
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.css',
 })
-export class ProductPageComponent {
-  products = [
-    new Product({
-      name: 'A產品',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 1580,
-    }),
-    new Product({
-      name: 'B產品',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 1580,
-    }),
-    new Product({
-      name: 'C產品',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 1580,
-    }),
-    new Product({
-      name: 'D產品',
-      authors: ['作者A', '作者B', '作者C'],
-      company: '博碩文化',
-      imgUrl: 'https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img',
-      price: 1580,
-    }),
-  ];
-
+export class ProductPageComponent implements OnInit {
   router = inject(Router);
+
+  private productService!: ProductService;
+
+  products!: Product[];
+
+  ngOnInit(): void {
+    this.productService = new ProductService();
+    this.products = this.productService.getList();
+  }
 
   onView(product: Product): void {
     this.router.navigate(['product', product.name]);
