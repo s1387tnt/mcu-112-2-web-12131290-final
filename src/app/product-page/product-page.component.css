@@ -8,8 +8,19 @@ div {
 }
 
 .toolbar {
+  display: flex;
   margin-bottom: 20px;
-  margin: 10px;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  margin-right: 10px;
+  padding: 5px;
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+  border: solid 1px #808080;
+  border-radius: 5px;
 }
 
 button {
@@ -20,13 +31,5 @@ button {
   background-color: white;
   font-weight: bold;
   display: inline-block;
-  border-radius: 2px;
-}
-
-.Inquire {
-  margin-bottom: 20px;
-  border: solid 1px;
-  padding: 10px 100px;
-  color: gray;
   border-radius: 2px;
 }
