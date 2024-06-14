@@ -3,54 +3,56 @@
     {
       "id": 1,
       "name": "產品A",
-      "authors": [
-        "作者甲",
-        "作者乙",
-        "作者丙"
-      ],
+      "authors": ["作者甲", "作者乙", "作者丙"],
       "company": "博碩文化",
       "isSALE": true,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 10000
     },
     {
+      "id": 2,
       "name": "產品B",
-      "authors": [
-        "作者甲",
-        "作者乙",
-        "作者丙"
-      ],
+      "authors": ["作者甲", "作者乙", "作者丙"],
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000,
-      "id": 2
+      "price": 10000
     },
     {
-      "name": "產品B",
-      "authors": [
-        "作者甲",
-        "作者乙",
-        "作者丙"
-      ],
+      "id": 3,
+      "name": "產品C",
+      "authors": ["作者甲", "作者乙", "作者丙"],
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000,
-      "id": 3
+      "price": 10000
     },
     {
-      "name": "產品B",
-      "authors": [
-        "作者甲",
-        "作者乙",
-        "作者丙"
-      ],
+      "id": 5,
+      "name": "產品D",
+      "authors": ["作者甲", "作者乙", "作者丙"],
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000,
-      "id": 4
+      "price": 10000
+    },
+    {
+      "id": 5,
+      "name": "產品E",
+      "authors": ["作者甲", "作者乙", "作者丙"],
+      "company": "博碩文化",
+      "isSALE": false,
+      "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+      "price": 10000
+    },
+    {
+      "id": 6,
+      "name": "產品F",
+      "authors": ["作者甲", "作者乙", "作者丙"],
+      "company": "博碩文化",
+      "isSALE": false,
+      "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+      "price": 10000
     }
   ]
 }
