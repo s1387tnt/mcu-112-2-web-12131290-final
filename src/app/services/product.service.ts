@@ -49,7 +49,8 @@ export class ProductService {
     return of(this._data).pipe(delay(2000));
   }
 
-  getById(productId: number): Product {
-    return this._data.find(({ id }) => id === productId)!;
+  getById(productId: number): Observable<Product> {
+    const product = this._data.find(({ id }) => id === productId)!;
+    return of(product);
   }
 }
