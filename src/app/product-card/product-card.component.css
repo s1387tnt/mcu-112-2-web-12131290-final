@@ -7,10 +7,6 @@
   gap: 10px;
 }
 
-div.content {
-  color: red;
-}
-
 div.content,
 div.company,
 div.button {

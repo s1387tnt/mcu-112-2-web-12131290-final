@@ -20,6 +20,7 @@ export class ProductCardComponent {
   @Input() authors!: string[];
   @Input() company!: string;
   @Input() imgUrl!: string;
+  @Input() isSale!: boolean;
 
   @Input({ transform: numberAttribute }) price!: number;
 

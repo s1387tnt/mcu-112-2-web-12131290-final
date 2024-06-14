@@ -13,4 +13,6 @@ export class Product {
   imgUrl!: string;
 
   price!: number;
+
+  isSale!: boolean;
 }
