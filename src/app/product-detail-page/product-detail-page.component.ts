@@ -12,6 +12,7 @@ import { Product } from '../model/product';
 })
 export class ProductDetailPageComponent {
   product = new Product({
+    id: 1,
     name: 'A產品',
     authors: ['作者A', '作者B', '作者C'],
     company: '博碩文化',
@@ -23,5 +24,9 @@ export class ProductDetailPageComponent {
 
   onBack(): void {
     this.router.navigate(['products']);
+  }
+
+  onShop(): void {
+    this.router.navigate(['shopping-cart']);
   }
 }
