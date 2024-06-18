@@ -18,13 +18,8 @@ section.form {
 
 section.detail {
   padding-bottom: 10px;
-  flex-basis: 55%;
+  flex-basis: 65%;
   border: 1px solid #ccc;
-  width: 1000px;
-  gap: 50px;
-  margin-left: 650px;
-  margin-right: 5px;
-  margin-bottom: 100px;
 }
 
 h3 {
@@ -60,20 +55,57 @@ div.form-item > input[type="text"] {
   font-size: 20px;
 }
 
-.tool-bar {
-  display: flex;
-  justify-content: center;
-}
-
-.tool-bar button {
-  padding: 10px 20px;
-  border: solid 1px #ccc;
-  cursor: pointer;
-  background-color: white;
-  color: #808080;
-}
-
 .error-message {
   color: red;
   margin-left: 5px;
+}
+
+div.id {
+  flex-basis: 100px;
+  text-align: center;
+}
+
+div.name {
+  flex-grow: 1;
+}
+
+div.count {
+  flex-basis: 200px;
+  text-align: center;
+}
+
+div.count > input[type="number"] {
+  padding: 5px;
+  width: 150px;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+div.delete {
+  flex-basis: 80px;
+  text-align: center;
+}
+
+div.delete button {
+  padding: 4px;
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #ba1a1a;
+  border: 1px solid #ba1a1a;
+}
+
+.tool-bar {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.tool-bar button {
+  padding: 8px;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #005cbb;
+  border: 1px solid #005cbb;
 }
