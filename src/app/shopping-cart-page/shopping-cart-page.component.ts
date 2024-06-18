@@ -1,5 +1,6 @@
 import { CurrencyPipe, JsonPipe } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   FormArray,
   FormControl,
@@ -9,6 +10,7 @@ import {
 } from '@angular/forms';
 import { IOrderForm } from '../interface/order-form.interface';
 
+import { filter, map } from 'rxjs';
 import { IOrderDetailForm } from '../interface/order-detail-form.interface';
 import { Product } from '../model/product';
 import { ShoppingCartService } from '../services/shopping-cart.service';
@@ -52,6 +54,8 @@ export class ShoppingCartPageComponent implements OnInit {
     return this.form.get('details') as FormArray<FormGroup<IOrderDetailForm>>;
   }
 
+  private readonly destroyRef = inject(DestroyRef);
+
   ngOnInit(): void {
     this.setOrderDetail();
   }
@@ -66,6 +70,17 @@ export class ShoppingCartPageComponent implements OnInit {
           nonNullable: true,
         }),
       });
+
+      control
+        .get('count')
+        ?.valueChanges.pipe(
+          filter((value) => value !== null),
+          map((value) => value * item.product.price),
+          takeUntilDestroyed(this.destroyRef)
+        )
+        .subscribe((price) =>
+          control.get('price')?.setValue(price, { EventEmitter: false })
+        );
 
       this.details.push(control);
     }
