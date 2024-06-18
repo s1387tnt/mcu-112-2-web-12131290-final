@@ -33,4 +33,7 @@ export class ProductCardListComponent {
   pageIndexChange = new EventEmitter<number>();
 
   @Output() view = new EventEmitter<Product>();
+
+  @Output()
+  addTo = new EventEmitter<Product>();
 }

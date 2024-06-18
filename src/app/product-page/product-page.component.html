@@ -10,4 +10,5 @@
   [(pageIndex)]="pageIndex"
   [pageSize]="pageSize"
   (view)="onView($event)"
+  (addTo)="shoppingCartService.addProduct($event)"
 ></app-product-card-list>

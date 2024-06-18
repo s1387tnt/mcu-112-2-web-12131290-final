@@ -13,6 +13,7 @@ import {
 import { Product } from '../model/product';
 import { ProductCardListComponent } from '../product-card-list/product-card-list.component';
 import { ProductService } from '../services/product.service';
+import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
   selector: 'app-product-page',
@@ -25,6 +26,8 @@ export class ProductPageComponent {
   router = inject(Router);
 
   private productService = inject(ProductService);
+
+  readonly shoppingCartService = inject(ShoppingCartService);
 
   protected pageSize = 5;
 
