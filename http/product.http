@@ -16,9 +16,10 @@ Content-Type: application/json
   "name": "產品B",
   "authors": ["作者甲", "作者乙", "作者丙"],
   "company": "博碩文化",
-  "isSALE": false,
+  "isShow": true,
+  "isSale": false,
   "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-  "price": 10000
+  "price": 1580
 }
 
 ###

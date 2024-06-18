@@ -1,13 +1,17 @@
 <div class="container">
-  @for(product of products; track product.name){
+  @for (product of products; track product.id) { @if(product.isShow){
   <app-product-card
     [productName]="product.name"
     [authors]="product.authors"
     [company]="product.company"
+    [isShow]="product.isShow"
+    [isSale]="product.isSale"
     [imgUrl]="product.imgUrl"
     [price]="product.price"
     (view)="view.emit(product)"
-  ></app-product-card>
+  ></app-product-card
+  >} }@empty {
+  <div class="data-empty">無產品資料</div>
   }
 </div>
 <app-pagination
