@@ -30,4 +30,12 @@ export class ProductRemoteService extends ProductService {
       .get<Product[]>(this.url, option)
       .pipe(map((data) => data.length));
   }
+
+  override update(product: Product): Observable<Product> {
+    return this.httpClient.put<Product>(`${this.url}/${product.id}`, product);
+  }
+
+  override getById(productId: number): Observable<Product> {
+    return this.httpClient.get<Product>(`${this.url}/${productId}`);
+  }
 }

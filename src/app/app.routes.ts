@@ -8,7 +8,7 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'products' },
   { path: 'products', component: ProductPageComponent },
   {
-    path: 'product/:id',
+    path: 'product/form/:id',
     component: ProductDetailPageComponent,
     resolve: { product: productResolver },
   },
