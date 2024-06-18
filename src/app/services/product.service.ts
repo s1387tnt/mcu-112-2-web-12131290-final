@@ -63,18 +63,7 @@ export class ProductService {
   }
 
   getCount(name?: string): Observable<number> {
-    console.log('getCount called with name:', name);
-    if (name) {
-      const count = this._data.filter((product) =>
-        product.name.toLowerCase().includes(name.toLowerCase())
-      ).length;
-      console.log('Filtered count:', count);
-      return of(count);
-    } else {
-      const totalCount = this._data.length;
-      console.log('Total count:', totalCount);
-      return of(totalCount);
-    }
+    throw new Error('NO');
   }
 
   getById(productId: number): Observable<Product> {
