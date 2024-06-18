@@ -5,6 +5,7 @@ import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { IOrderForm } from '../interface/order-form.interface';
 
@@ -23,11 +24,29 @@ export class ShoppingCartPageComponent implements OnInit {
   readonly ShoppingCartService = inject(ShoppingCartService);
 
   readonly form = new FormGroup<IOrderForm>({
-    name: new FormControl<string | null>(null),
-    address: new FormControl<string | null>(null),
-    phone: new FormControl<string | null>(null),
+    name: new FormControl<string | null>(null, {
+      validators: [Validators.required],
+    }),
+    address: new FormControl<string | null>(null, {
+      validators: [Validators.required],
+    }),
+    phone: new FormControl<string | null>(null, {
+      validators: [Validators.required, Validators.pattern('\\d{8,10}')],
+    }),
     details: new FormArray<FormGroup<IOrderDetailForm>>([]),
   });
+
+  get name(): FormControl<string | null> {
+    return this.form.get('name') as FormControl<string | null>;
+  }
+
+  get address(): FormControl<string | null> {
+    return this.form.get('address') as FormControl<string | null>;
+  }
+
+  get phone(): FormControl<string | null> {
+    return this.form.get('phone') as FormControl<string | null>;
+  }
 
   get details(): FormArray<FormGroup<IOrderDetailForm>> {
     return this.form.get('details') as FormArray<FormGroup<IOrderDetailForm>>;
@@ -50,5 +69,9 @@ export class ShoppingCartPageComponent implements OnInit {
 
       this.details.push(control);
     }
+  }
+
+  onSave(): void {
+    console.log('save');
   }
 }

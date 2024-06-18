@@ -55,11 +55,6 @@ div.form-item > input[type="text"] {
   font-size: 20px;
 }
 
-.error-message {
-  color: red;
-  margin-left: 5px;
-}
-
 div.id {
   flex-basis: 100px;
   text-align: center;
@@ -108,4 +103,13 @@ div.delete button {
   cursor: pointer;
   color: #005cbb;
   border: 1px solid #005cbb;
+}
+
+.tool-bar button[disabled] {
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
 }
