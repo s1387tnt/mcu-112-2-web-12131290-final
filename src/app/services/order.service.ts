@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ShoppingCartSaveService {
-  private readonly url = 'http://localhost:3000/products';
+  private readonly url = 'http://localhost:3000/orders';
 
   private readonly httpClient = inject(HttpClient);
 
