@@ -1,4 +1,4 @@
-import { CurrencyPipe, JsonPipe } from '@angular/common';
+import { CurrencyPipe, JsonPipe, NgFor } from '@angular/common';
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
@@ -9,16 +9,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { IOrderForm } from '../interface/order-form.interface';
+import { ShoppingCartService } from './../services/shopping-cart.service';
 
 import { filter, map } from 'rxjs';
 import { IOrderDetailForm } from '../interface/order-detail-form.interface';
 import { Product } from '../model/product';
-import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
   selector: 'app-shopping-cart-page',
   standalone: true,
-  imports: [ReactiveFormsModule, JsonPipe, CurrencyPipe],
+  imports: [ReactiveFormsModule, JsonPipe, CurrencyPipe, NgFor],
   templateUrl: './shopping-cart-page.component.html',
   styleUrl: './shopping-cart-page.component.css',
 })
@@ -103,5 +103,10 @@ export class ShoppingCartPageComponent implements OnInit {
 
   onSave(): void {
     console.log('save');
+  }
+
+  onDelete(index: number, id: number | undefined): void {
+    this.details.removeAt(index);
+    this.ShoppingCartService.deleteProduct(id!);
   }
 }
