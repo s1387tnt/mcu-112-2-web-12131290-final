@@ -11,6 +11,7 @@ import {
 import { IOrderForm } from '../interface/order-form.interface';
 import { ShoppingCartService } from './../services/shopping-cart.service';
 
+import { HttpClient } from '@angular/common/http';
 import { filter, map } from 'rxjs';
 import { IOrderDetailForm } from '../interface/order-detail-form.interface';
 import { Product } from '../model/product';
@@ -23,6 +24,10 @@ import { Product } from '../model/product';
   styleUrl: './shopping-cart-page.component.css',
 })
 export class ShoppingCartPageComponent implements OnInit {
+  private apiUrl = 'http://localhost:3000/products';
+
+  constructor(private http: HttpClient) {}
+
   readonly ShoppingCartService = inject(ShoppingCartService);
 
   readonly form = new FormGroup<IOrderForm>({
@@ -102,7 +107,32 @@ export class ShoppingCartPageComponent implements OnInit {
   }
 
   onSave(): void {
-    console.log('save');
+    if (this.form.valid) {
+      const formData = {
+        name: this.name.value,
+        address: this.address.value,
+        phone: this.phone.value,
+        details: this.details.value.map((formGroup: any) => ({
+          id: formGroup.id,
+          product: formGroup.product,
+          count: formGroup.count,
+          price: formGroup.price,
+        })),
+      };
+
+      this.http.post(this.apiUrl, formData).subscribe(
+        (response) => {
+          console.log('資料已成功保存到 db.json 中', response);
+          this.form.reset();
+          this.details.clear();
+        },
+        (error) => {
+          console.error('保存資料到 db.json 時出錯', error);
+        }
+      );
+    } else {
+      console.error('表單資料無效，無法保存到 db.json');
+    }
   }
 
   onDelete(index: number, id: number | undefined): void {

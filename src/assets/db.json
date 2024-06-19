@@ -3,7 +3,11 @@
     {
       "id": 1,
       "name": "產品A",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": true,
@@ -13,7 +17,11 @@
     {
       "id": 2,
       "name": "產品B",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": false,
@@ -23,7 +31,11 @@
     {
       "id": 3,
       "name": "產品C",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": false,
@@ -33,7 +45,11 @@
     {
       "id": 5,
       "name": "產品D",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": false,
@@ -43,7 +59,11 @@
     {
       "id": 5,
       "name": "產品E",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": false,
@@ -53,7 +73,11 @@
     {
       "id": 6,
       "name": "產品F",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": false,
@@ -62,13 +86,109 @@
     },
     {
       "name": "產品B",
-      "authors": ["作者甲", "作者乙", "作者丙"],
+      "authors": [
+        "作者甲",
+        "作者乙",
+        "作者丙"
+      ],
       "company": "博碩文化",
       "isShow": true,
       "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580,
       "id": 7
+    },
+    {
+      "name": "111",
+      "address": "1111",
+      "phone": "123456789",
+      "details": [
+        {
+          "id": 1,
+          "product": {
+            "id": 5,
+            "name": "產品D",
+            "authors": [
+              "作者甲",
+              "作者乙",
+              "作者丙"
+            ],
+            "company": "博碩文化",
+            "isShow": true,
+            "isSale": false,
+            "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+            "price": 1580
+          },
+          "count": 2,
+          "price": 3160
+        },
+        {
+          "id": 2,
+          "product": {
+            "id": 3,
+            "name": "產品C",
+            "authors": [
+              "作者甲",
+              "作者乙",
+              "作者丙"
+            ],
+            "company": "博碩文化",
+            "isShow": true,
+            "isSale": false,
+            "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+            "price": 1580
+          },
+          "count": 1,
+          "price": 1580
+        },
+        {
+          "id": 3,
+          "product": {
+            "id": 2,
+            "name": "產品B",
+            "authors": [
+              "作者甲",
+              "作者乙",
+              "作者丙"
+            ],
+            "company": "博碩文化",
+            "isShow": true,
+            "isSale": false,
+            "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+            "price": 1580
+          },
+          "count": 1,
+          "price": 1580
+        }
+      ],
+      "id": 8
+    },
+    {
+      "name": "11111",
+      "address": "22222",
+      "phone": "123456789",
+      "details": [
+        {
+          "id": 1,
+          "product": {
+            "id": 3,
+            "name": "產品C",
+            "authors": [
+              "作者甲",
+              "作者乙",
+              "作者丙"
+            ],
+            "company": "博碩文化",
+            "isShow": true,
+            "isSale": false,
+            "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
+            "price": 1580
+          },
+          "count": 1,
+          "price": 1580
+        }
+      ],
+      "id": 9
     }
   ]
 }
