@@ -56,7 +56,22 @@ export class ShoppingCartPageComponent implements OnInit {
 
   private readonly destroyRef = inject(DestroyRef);
 
+  totalPrice = 0;
+
   ngOnInit(): void {
+    this.details.valueChanges
+      .pipe(
+        map((items) => {
+          if (items.length === 0) {
+            return 0;
+          } else {
+            return items.reduce((sum, curr) => sum + (curr.price || 0), 0);
+          }
+        }),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe((totalPrice) => (this.totalPrice = totalPrice));
+
     this.setOrderDetail();
   }
 
