@@ -11,10 +11,10 @@ import {
 import { IOrderForm } from '../interface/order-form.interface';
 import { ShoppingCartService } from './../services/shopping-cart.service';
 
-import { HttpClient } from '@angular/common/http';
 import { filter, map } from 'rxjs';
 import { IOrderDetailForm } from '../interface/order-detail-form.interface';
 import { Product } from '../model/product';
+import { ShoppingCartSaveService } from '../services/order.service';
 
 @Component({
   selector: 'app-shopping-cart-page',
@@ -24,12 +24,8 @@ import { Product } from '../model/product';
   styleUrl: './shopping-cart-page.component.css',
 })
 export class ShoppingCartPageComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/orders';
-
-  constructor(private http: HttpClient) {}
-
   readonly ShoppingCartService = inject(ShoppingCartService);
-
+  readonly ShoppingCartSaveService = inject(ShoppingCartSaveService);
   readonly form = new FormGroup<IOrderForm>({
     name: new FormControl<string | null>(null, {
       validators: [Validators.required],
@@ -120,18 +116,19 @@ export class ShoppingCartPageComponent implements OnInit {
         })),
       };
 
-      this.http.post(this.apiUrl, formData).subscribe(
-        (response) => {
-          console.log('資料已成功保存到 db.json 中', response);
-          this.form.reset();
-          this.details.clear();
-        },
-        (error) => {
-          console.error('保存資料到 db.json 時出錯', error);
-        }
-      );
-    } else {
-      console.error('表單資料無效，無法保存到 db.json');
+      if (this.form.valid) {
+        const order = this.form.value;
+        this.ShoppingCartSaveService.saveOrder(order).subscribe({
+          next: (response) => {
+            console.log('Order saved successfully', response);
+          },
+          error: (error) => {
+            console.error('Error saving order', error);
+          },
+        });
+      } else {
+        console.error('Form is invalid');
+      }
     }
   }
 
