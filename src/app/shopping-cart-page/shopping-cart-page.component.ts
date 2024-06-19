@@ -24,7 +24,7 @@ import { Product } from '../model/product';
   styleUrl: './shopping-cart-page.component.css',
 })
 export class ShoppingCartPageComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/products';
+  private apiUrl = 'http://localhost:3000/orders';
 
   constructor(private http: HttpClient) {}
 
