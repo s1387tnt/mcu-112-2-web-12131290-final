@@ -6,7 +6,7 @@
 </div>
 <app-product-card-list
   [products]="(products$ | async) || []"
-  [totalCount]="(totalCount$ | async) || 0"
+  [totalCount]="totalCount$ | async"
   [(pageIndex)]="pageIndex"
   [pageSize]="pageSize"
   (view)="onView($event)"

@@ -27,11 +27,7 @@
   <section class="detail">
     <h3>購買項目</h3>
     @for(control of details.controls; track $index){
-    <div
-      class="item"
-      formArrayName="details"
-      *ngFor="let control of details.controls; let index = index"
-    >
+    <div class="item" formArrayName="details">
       <ng-container [formGroupName]="$index">
         <div class="id">{{ control.value.id }}</div>
         <div class="name">{{ control.value.product?.name }}</div>
@@ -40,7 +36,7 @@
         </div>
         <div class="price">{{ control.value.price | currency }}</div>
         <div class="delete">
-          <button type="button" (click)="onDelete(index, control.value.id)">
+          <button type="button" (click)="onDelete($index, control.value.id)">
             刪除
           </button>
         </div>
@@ -55,3 +51,5 @@
     送出訂單({{ totalPrice | currency }})
   </button>
 </div>
+
+<pre>{{ ShoppingCartService.data | json }}</pre>
